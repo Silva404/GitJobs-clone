@@ -10,7 +10,7 @@ import JobPosition from "./pages/JobPosition";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
 
       <Routes>
         <Route path="/" element={<Jobs />} />

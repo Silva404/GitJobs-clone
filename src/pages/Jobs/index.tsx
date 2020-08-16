@@ -1,28 +1,41 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import JobCard from "../../components/JobCard";
 import { useParams } from "react-router-dom";
 import api from "../../Services/api";
 
 // import { Container } from './styles';
 
+interface PositionsApi {
+  company?: string;
+  location?: string;
+  id?: string;
+  title?: string;
+}
+
 const Jobs: React.FC = () => {
-  const { description, location } = useParams();
+  const { description = "java", location } = useParams();
+  const [jobs, setJobs] = useState<PositionsApi>([]);
 
   useEffect(() => {
-    api.get('/positions.json')
-  }, [])
+    api
+      .get(`/positions.json?${description}`)
+      .then((res) => {
+        console.log(res.data);
+
+        setJobs(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   return (
-    <div>
-      {[1, 2, 3].map((item, index) => {
-        <JobCard
-          key={index}
-          company={"company"}
-          location={"location"}
-          id={"id"}
-          title={"title"}
-        />;
-      })}
+
+  <h1>{jobs[0].company}</h1>
+    // <div>
+    //   {jobs.map((item) => {
+    //     return <JobCard location={item.location} key={item.id} />;
+    //   })}
     </div>
   );
 };
