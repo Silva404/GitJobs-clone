@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   Container,
@@ -8,10 +8,19 @@ import {
   LinksContainer,
   HeaderContent,
   Menu,
-  GitLogo
+  GitLogo,
 } from "./styles";
 
 const Header: React.FC = () => {
+  const [search, setSearch] = useState('');
+  const navigate = useNavigate()
+
+  function handleSubmit(event: React.FormEvent) {
+    event.preventDefault()
+
+    navigate(`/positions/` + search.toLowerCase().trim())
+  }
+
   return (
     <Container>
       <Menu>
@@ -26,9 +35,15 @@ const Header: React.FC = () => {
           </LinksContainer>
         </HeaderContent>
 
-        <SearchForm>
+        <SearchForm onSubmit={handleSubmit}>
           <label htmlFor="description">Job description</label>
-          <input name="description" placeholder="Filter by description, benefits, companies, expertise" />
+          <input
+            name="description"
+            placeholder="Filter by description, benefits, companies, expertise"
+            value={search}
+            onChange={e => setSearch(e.currentTarget.value)}
+          />
+          <button type="submit">Enviar</button>
         </SearchForm>
       </Menu>
     </Container>

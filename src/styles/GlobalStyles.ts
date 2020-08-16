@@ -30,9 +30,10 @@ export default createGlobalStyle `
     background: var(--background-color);
   }
 
-  #root {
+  html {
     display: flex;
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 

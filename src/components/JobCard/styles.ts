@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  
+  a {
+    color: var(--titleColor);
+  }
 `;
 
 export const TopSide = styled.div `
