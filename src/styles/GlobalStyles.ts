@@ -41,6 +41,10 @@ export default createGlobalStyle `
     color: #fff;
   }
 
+  input {
+    outline: 0;
+  }
+
   body,
   input,
   button {

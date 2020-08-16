@@ -3,7 +3,7 @@ import { GoLogoGithub } from 'react-icons/go'
 
 export const Container = styled.div`
   background-color: var(--color-primary);
-  height: 450px;
+  height: 250px;
   width: 100vw;
 `;
 
@@ -25,8 +25,35 @@ export const HeaderContent = styled.div `
 `
 export const LinksContainer = styled.div `
   a {
-    margin-right: 1em;
+    transition: 200ms;
+  }
+  a:hover {
+    opacity: 0.8;
+  }
+  a:first-child {
+    margin-right: 1.5em;
+    position: relative;
   }  
+  a:first-child::after {
+    position: absolute;
+    content: '';
+    height: 80%;
+    top: 3px;
+    right: -13px;
+    width: 1px;
+    background: rgba(255,255,255,.2)
+  }
+`
+
+export const GitLogo = styled.div `
+  p {
+    font-size: 2.6rem;
+    font-weight: 300;
+    margin: 0.2em 0 0 0.1em;
+    color: #fff;
+  }
+  display: flex;
+  align-items: center;
 `
 
 export const GitJobsLogo = styled(GoLogoGithub) `

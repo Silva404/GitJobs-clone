@@ -7,7 +7,8 @@ import {
   SearchForm,
   LinksContainer,
   HeaderContent,
-  Menu
+  Menu,
+  GitLogo
 } from "./styles";
 
 const Header: React.FC = () => {
@@ -15,7 +16,10 @@ const Header: React.FC = () => {
     <Container>
       <Menu>
         <HeaderContent>
-          <GitJobsLogo />
+          <GitLogo>
+            <GitJobsLogo />
+            <p>Jobs</p>
+          </GitLogo>
           <LinksContainer>
             <Link to="/positions">All jobs</Link>
             <Link to="/faq">How it works</Link>
