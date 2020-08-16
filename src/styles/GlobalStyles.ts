@@ -32,12 +32,13 @@ export default createGlobalStyle `
 
   #root {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
   }
 
   a {
     text-decoration: none;
+    color: #fff;
   }
 
   body,

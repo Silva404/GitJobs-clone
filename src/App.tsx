@@ -11,7 +11,6 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <h1>Git Jobs</h1>
 
       <Routes>
         <Route path="/" element={<Jobs />} />
