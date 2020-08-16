@@ -13,14 +13,20 @@ interface PositionsApi {
 }
 
 const Jobs: React.FC = () => {
-  const { description = "java", location } = useParams();
+  const { description, location } = useParams();
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     api
-      .get(`/positions.json?${description}`)
-      .then((res) => {
+      .get(`/positions.json`, {
+        params: {
+          description,
+          location
+        }
+      })
+      .then((res) => {        
         setJobs(res.data.sort(() => 0.5 - Math.random()).slice(0, 2));
+        console.log(setJobs);        
       })
       .catch((err) => {
         console.error(err);
@@ -29,7 +35,6 @@ const Jobs: React.FC = () => {
 
   return (
     <div>
-
       {jobs.map((job, index) => {
         return <JobCard key={index} job={job} />;
       })}

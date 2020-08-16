@@ -63,5 +63,49 @@ export const GitJobsLogo = styled(GoLogoGithub) `
 `;
 
 export const SearchForm = styled.div `
-
+  margin-top: 5rem; 
 `;
+
+export const InputBlock = styled.div `
+  position: relative;
+  margin-bottom: 1em;
+
+  &focus-within::after {
+  width: calc(100% - 3.2rem);
+  height: 2px;
+  border-radius: 50%;
+  content: '';
+  background: var(--color-primary);
+  position: absolute;
+  left: 1.6rem;
+  right: 1.6rem;
+  bottom: 0;
+
+  @media (min-width: 700px) {
+    margin-top: 4em;
+    display: grid;
+    grid-template-columns:  1.5fr 1.5fr 0.5fr 0.5fr ;
+    gap: 1.5em;   
+  }
+}
+
+  label {
+  color: var(--label-color);
+  font-size: 1.4rem;
+}
+
+  input {
+    outline: none;
+    color: var(--input-txt-color);
+    margin-top: 0.5em;
+    padding: 1em 2em;
+    width: 100%;
+    font-size: 1.4rem;
+    border: 0;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 25px -10px rgba(0, 0, 0, .2)
+  }
+  @media (min-width: 700px) {
+    margin-bottom: 0;
+  }  
+`

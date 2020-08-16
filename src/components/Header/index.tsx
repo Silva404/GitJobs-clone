@@ -9,16 +9,17 @@ import {
   HeaderContent,
   Menu,
   GitLogo,
+  InputBlock
 } from "./styles";
 
 const Header: React.FC = () => {
-  const [search, setSearch] = useState('');
-  const navigate = useNavigate()
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(event: React.FormEvent) {
-    event.preventDefault()
+    event.preventDefault();
 
-    navigate(`/positions/` + search.toLowerCase().trim())
+    navigate(`/positions?description=` + search.toLowerCase().trim());
   }
 
   return (
@@ -35,15 +36,19 @@ const Header: React.FC = () => {
           </LinksContainer>
         </HeaderContent>
 
-        <SearchForm onSubmit={handleSubmit}>
-          <label htmlFor="description">Job description</label>
-          <input
-            name="description"
-            placeholder="Filter by description, benefits, companies, expertise"
-            value={search}
-            onChange={e => setSearch(e.currentTarget.value)}
-          />
-          <button type="submit">Enviar</button>
+        <SearchForm>
+          <form method="post" onSubmit={handleSubmit}>
+            <InputBlock >
+              <label htmlFor="description">Job description</label>
+              <input
+                name="description"
+                placeholder="Filter by description, benefits, companies, expertise"
+                value={search}
+                onChange={(e) => setSearch(e.currentTarget.value)}
+              />
+              <button type="submit">Enviar</button>
+            </InputBlock >
+          </form>
         </SearchForm>
       </Menu>
     </Container>
