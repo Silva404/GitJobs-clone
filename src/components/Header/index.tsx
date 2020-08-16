@@ -27,7 +27,8 @@ const Header: React.FC = () => {
         </HeaderContent>
 
         <SearchForm>
-          <input />
+          <label htmlFor="description">Job description</label>
+          <input name="description" placeholder="Filter by description, benefits, companies, expertise" />
         </SearchForm>
       </Menu>
     </Container>
