@@ -2,8 +2,8 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-const JobsPositions: React.FC = () => {
+const JobPosition: React.FC = () => {
   return <div />;
 }
 
-export default JobsPositions;
+export default JobPosition;
