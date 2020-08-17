@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { MdKeyboardBackspace } from 'react-icons/md'
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 940px;
+  width: 940px;
   margin: 2em auto;
   a.allPositions {
     display: flex;
@@ -56,7 +55,7 @@ export const Title = styled.div `
 export const AboutContainer = styled.div ` 
   width: 100%;
   display: grid;
-  grid-template-columns: 550px 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 2em;
   
 `;
@@ -66,8 +65,12 @@ export const AsideLeft = styled.div `
   font-size: 1.4rem;
   font-weight: 300;
   color: var(--input-txt2-color);  
+  p {
+    width: 100%;
+  }
 `;
 export const AsideRight = styled.div ` 
+  width: 100%;
   align-self: start;
   a {
     color: var(--title-color)
@@ -75,6 +78,9 @@ export const AsideRight = styled.div `
   
 `;
 export const Company = styled.div `
+  a { 
+    color: var(--subtitle-color)
+  }
   padding: 1em;
   margin-bottom: 1em;
   border: 1px solid var(--border-color);
@@ -89,9 +95,24 @@ export const Company = styled.div `
   
 `;
 export const HowToApply = styled.div ` 
+  width: 100%;
+  
+
   padding: 1em;
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
   box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
-  
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--subtitle-color)
+  }
+  img {
+    width: 100%;
+  }
 `;
+
+export const Apply = styled.div `
+  width: 120px;
+  font-size: 1.4rem;
+`

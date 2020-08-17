@@ -11,6 +11,7 @@ export default createGlobalStyle `
     --border-color: #e2e5ee;
     --input-txt-color: #7a798d;
     --title-color: #262A4D;
+    --subtitle-color: #282a3b;
     --base-txt-color: #4A69A7;
     --green-color: #45C328;
     --color-text-in-primary: #C2D3FF;

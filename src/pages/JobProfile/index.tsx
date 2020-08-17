@@ -12,7 +12,8 @@ import {
   HowToApply,
   PositionContainer,
   ArrowLeft,
-  Title
+  Title,
+  Apply
 } from "./styles";
 
 interface Data {
@@ -80,7 +81,9 @@ const JobProfile: React.FC = () => {
 
             <HowToApply>
               <h3>How to apply</h3>
-              <p>Please email your resume to</p>
+              <Apply>
+                {job?.how_to_apply}
+              </Apply>
               {/* <Link to={job?.url}>{job?.url}</Link> */}
             </HowToApply>
           </AsideRight>
