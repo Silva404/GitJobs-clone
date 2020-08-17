@@ -8,6 +8,7 @@ import Jobs from "./pages/Jobs";
 import JobPosition from "./pages/JobPosition";
 
 function App() {
+
   return (
     <BrowserRouter>
       <Header />
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Jobs />} />
         <Route path="/positions" element={<Jobs />} />
-        <Route path="/positions/:id" element={<JobPosition />} />
+        <Route path="/positions/:id" element={<JobPosition/>} />
       </Routes>
 
       {/* <Footer /> */}
