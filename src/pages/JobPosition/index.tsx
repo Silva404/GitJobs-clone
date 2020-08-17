@@ -11,7 +11,8 @@ import {
   Company,
   HowToApply,
   PositionContainer,
-  ArrowLeft
+  ArrowLeft,
+  Title
 } from "./styles";
 
 interface Data {
@@ -49,7 +50,6 @@ const JobPosition: React.FC = () => {
         console.error(err);
       });
   }, []);
-  console.log(job);
 
   return (
     <Container>
@@ -58,10 +58,12 @@ const JobPosition: React.FC = () => {
         See all positions
       </Link>
       <PositionContainer>
-        <p>
-          {job?.type} / {job?.location}
-        </p>
-        <h1>{job?.title}</h1>
+        <Title>
+          <p>
+            {job?.type} / {job?.location} / {job?.type}
+          </p>
+          <h1>{job?.title}</h1>
+        </Title>
         <AboutContainer>
           <AsideLeft>
             <p>{job?.description}</p>

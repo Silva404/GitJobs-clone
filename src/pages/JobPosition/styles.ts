@@ -7,14 +7,16 @@ export const Container = styled.div`
   max-width: 940px;
   margin: 2em auto;
   a.allPositions {
+    display: flex;
+    align-items: center;
     font-size: 1.4rem;
-    margin-left: 1em;
-    color: var(--title-color)
+    color: var(--base-txt-color)
   }
 `;
 
 export const ArrowLeft = styled(MdKeyboardBackspace) `
   height: 15px;
+  margin-right: 0.5em;
 `
 
 export const PositionContainer = styled.div ` 
@@ -24,6 +26,18 @@ export const PositionContainer = styled.div `
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
   box-shadow: 0 10px 20px -5px rgba(0,0,0,.1)
+`;
+
+export const Title = styled.div ` 
+  p {
+    font-size: 1.4rem;
+    color: var(--input-txt-color);
+    margin-bottom: 0.5em;
+  }
+  h1 {
+    font-size: 2.2rem;
+    color: var(--title-color)
+  }
 `;
 
 export const AboutContainer = styled.div ` 
@@ -36,9 +50,12 @@ export const AboutContainer = styled.div `
 
 export const AsideLeft = styled.div ` 
   width: 100%;
+  font-size: 1.4rem;
+  color: var(--input-txt2-color)
   
 `;
 export const AsideRight = styled.div ` 
+  align-self: start;
   
 `;
 export const Company = styled.div `
