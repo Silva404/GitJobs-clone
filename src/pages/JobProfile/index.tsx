@@ -30,7 +30,7 @@ interface Data {
   company_url: string;
 }
 
-const JobPosition: React.FC = () => {
+const JobProfile: React.FC = () => {
   const { id } = useParams();
   const [job, setJob] = useState<Data>();
 
@@ -90,4 +90,4 @@ const JobPosition: React.FC = () => {
   );
 };
 
-export default JobPosition;
+export default JobProfile;

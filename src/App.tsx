@@ -4,8 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
 
 import Header from "./components/Header";
-import Jobs from "./pages/Jobs";
-import JobPosition from "./pages/JobPosition";
+import Positions from "./pages/Positions";
+import Home from "./pages/Home";
+import JobProfile from "./pages/JobProfile";
 
 function App() {
 
@@ -14,9 +15,9 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Jobs />} />
-        <Route path="/positions" element={<Jobs />} />
-        <Route path="/positions/:id" element={<JobPosition/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/positions" element={<Positions />} />
+        <Route path="/positions/:id" element={<JobProfile/>} />
       </Routes>
 
       {/* <Footer /> */}

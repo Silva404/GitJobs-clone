@@ -21,21 +21,34 @@ export const ArrowLeft = styled(MdKeyboardBackspace) `
 
 export const PositionContainer = styled.div ` 
   width: 100%;
-  margin: 1em 0;
+  margin: 1em 0; 
+
   padding: 2em;
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
-  box-shadow: 0 10px 20px -5px rgba(0,0,0,.1)
+  box-shadow: 0 10px 20px -5px rgba(0,0,0,.1);
 `;
 
 export const Title = styled.div ` 
+  margin-bottom: 2.5em;
+  position: relative;
+
+  &::after{
+    position: absolute;
+    content: '';
+    bottom: -20px;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,.1)
+  }
   p {
-    font-size: 1.4rem;
+    font-weight: 300;
+    font-size: 1.3rem;
     color: var(--input-txt-color);
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
   }
   h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: var(--title-color)
   }
 `;
@@ -43,7 +56,7 @@ export const Title = styled.div `
 export const AboutContainer = styled.div ` 
   width: 100%;
   display: grid;
-  grid-template-columns: 620px 1fr;
+  grid-template-columns: 550px 1fr;
   gap: 2em;
   
 `;
@@ -51,15 +64,24 @@ export const AboutContainer = styled.div `
 export const AsideLeft = styled.div ` 
   width: 100%;
   font-size: 1.4rem;
-  color: var(--input-txt2-color)
-  
+  font-weight: 300;
+  color: var(--input-txt2-color);  
 `;
 export const AsideRight = styled.div ` 
   align-self: start;
+  a {
+    color: var(--title-color)
+  }
   
 `;
 export const Company = styled.div `
- a {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5em;
+  box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
+  
+  a {
    img {
      width: 100%;
    }
@@ -67,5 +89,9 @@ export const Company = styled.div `
   
 `;
 export const HowToApply = styled.div ` 
+  padding: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5em;
+  box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
   
 `;

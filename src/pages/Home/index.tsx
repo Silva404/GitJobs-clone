@@ -12,7 +12,7 @@ interface PositionsApi {
   title?: string;
 }
 
-const Jobs: React.FC = () => {
+const Home: React.FC = () => {
   const { description, location } = useParams();
   const [jobs, setJobs] = useState([]);
 
@@ -44,4 +44,4 @@ const Jobs: React.FC = () => {
   );
 };
 
-export default Jobs;
+export default Home;
