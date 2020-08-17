@@ -1,6 +1,14 @@
 import React from "react";
 
-import { Container, AboutContainer, AsideLeft, AsideRight, Company, HowToApply } from "./styles";
+import {
+  Container,
+  AboutContainer,
+  AsideLeft,
+  AsideRight,
+  Company,
+  HowToApply,
+} from "./styles";
+
 import { Link } from "react-router-dom";
 
 interface Data {

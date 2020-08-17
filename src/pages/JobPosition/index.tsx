@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-import { Container } from "./styles";
 import { Link, useParams } from "react-router-dom";
 import api from "../../Services/api";
-import PositionCard from "../../components/PositionCard";
+
+import {
+  Container,
+  AboutContainer,
+  AsideLeft,
+  AsideRight,
+  Company,
+  HowToApply,
+  PositionContainer
+} from "./styles";
 
 interface Data {
   id: string;
@@ -47,17 +55,30 @@ const JobPosition: React.FC = () => {
   return (
     <Container>
       <h1>See all positions </h1>
-      <p>{job?.title}</p>
-      <p>{job?.company}</p>
-      <div>
-      {job?.description}
-      </div>
-      <p>{job?.full_time}</p>
-      <p>{job?.location}</p>
-      <p>{job?.id}</p>
-      <p>{job?.created_at}</p>
-      <p>{job?.how_to_apply}</p>
-      {/* <PositionCard job={job}/> */}
+      <PositionContainer>
+        <p>
+          {job?.full_time} / {job?.location}
+        </p>
+        <h1>{job?.title}</h1>
+        <AboutContainer>
+          <AsideLeft>
+            <p>{job?.description}</p>
+          </AsideLeft>
+          <AsideRight>
+            <Company>
+              {job?.company}
+              <img src={job?.url} alt={job?.company} />
+              {/* <Link to={job?.url}>{job?.url}</Link> */}
+            </Company>
+
+            <HowToApply>
+              <h3>How to apply</h3>
+              <p>Please email your resume to</p>
+              {/* <Link to={job?.url}>{job?.url}</Link> */}
+            </HowToApply>
+          </AsideRight>
+        </AboutContainer>
+      </PositionContainer>
     </Container>
   );
 };
