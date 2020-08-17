@@ -15,10 +15,8 @@ import api from "../../Services/api";
 import JobCard from "../JobCard";
 
 const Header: React.FC = () => {
-  // const [search, setSearch] = useState("");
-
   const [description, setdescription] = useState("");
-  // const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("");
   // const [type, setType] = useState("");
 
   const navigate = useNavigate();
@@ -40,10 +38,8 @@ const Header: React.FC = () => {
     //     console.error(err);
     //   });
 
-    navigate(`/positions`);
+    navigate(`/positions?${params}`);
   }
-
-  // ?description=` + description.toLowerCase().trim()
 
   return (
     <Container>
