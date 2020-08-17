@@ -9,7 +9,11 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     font-size: 1.4rem;
-    color: var(--base-txt-color)
+    color: var(--base-txt-color);
+    transition: 200ms;
+  }
+  a.allPositions:hover {
+    filter: brightness(0.6)
   }
 `;
 
@@ -35,7 +39,7 @@ export const Title = styled.div `
   &::after{
     position: absolute;
     content: '';
-    bottom: -20px;
+    bottom: -18px;
     width: 100%;
     height: 1px;
     background: rgba(0,0,0,.1)

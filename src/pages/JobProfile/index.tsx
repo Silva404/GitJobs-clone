@@ -51,6 +51,8 @@ const JobProfile: React.FC = () => {
         console.error(err);
       });
   }, []);
+  console.log(job);
+  
 
   return (
     <Container>
@@ -61,7 +63,7 @@ const JobProfile: React.FC = () => {
       <PositionContainer>
         <Title>
           <p>
-            {job?.type} / {job?.location} / {job?.type}
+            {job?.type} / {job?.location}
           </p>
           <h1>{job?.title}</h1>
         </Title>
