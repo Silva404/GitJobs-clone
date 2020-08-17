@@ -21,12 +21,16 @@ const Jobs: React.FC = () => {
       .get(`/positions.json`, {
         params: {
           description,
-          location
-        }
+          location,
+          markdown: true,
+        },
       })
-      .then((res) => {        
-        setJobs(res.data.sort(() => 0.5 - Math.random()).slice(0, 2));
-        console.log(setJobs);        
+      .then((res) => {
+        const results = res.data
+        console.log(results);
+        
+
+        setJobs(results.sort(() => 0.5 - Math.random()).slice(0, 2));
       })
       .catch((err) => {
         console.error(err);
