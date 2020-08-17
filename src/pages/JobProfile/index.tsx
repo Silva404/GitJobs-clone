@@ -39,6 +39,7 @@ const JobProfile: React.FC = () => {
     api
       .get(`/positions/${id}.json`, {
         params: {
+          markdown: true,
           id,
         },
       })
