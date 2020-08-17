@@ -13,14 +13,22 @@ export default createGlobalStyle `
     --title-color: #262A4D;
     --subtitle-color: #282a3b;
     --base-txt-color: #4A69A7;
+    --footer-txt-color: #5b6b8b;
     --green-color: #45C328;
     --color-text-in-primary: #C2D3FF;
+
+    --button-txt-color: #f3f6fd;
+    --button-bg-color: #4e86bb;
   }
 
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  #root {
+    display: flex;
+    flex-direction: column; 
   }
 
   html, body, #root {

@@ -82,8 +82,23 @@ export const AsideRight = styled.div `
   
 `;
 export const Company = styled.div `
+  width: 100%; 
+
   a { 
-    color: var(--subtitle-color)
+    color: var(--subtitle-color);
+    position: relative;
+    margin-bottom: 1em;
+    display: flex;
+
+    &:first-child::after {
+      position: absolute;
+      content: '';
+      bottom: -6px;
+      height: 1px;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,.1);
+    }
   }
   padding: 1em;
   margin-bottom: 1em;
@@ -109,7 +124,19 @@ export const HowToApply = styled.div `
   h3 {
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--subtitle-color)
+    color: var(--subtitle-color);
+    position: relative;
+    margin-bottom: 1em;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -6px;
+      height: 1px;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,.1);
+    }
   }
   img {
     width: 100%;
@@ -117,6 +144,8 @@ export const HowToApply = styled.div `
 `;
 
 export const Apply = styled.div `
-  width: 120px;
-  font-size: 1.4rem;
+  margin-top: 1.5em;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 300;
 `

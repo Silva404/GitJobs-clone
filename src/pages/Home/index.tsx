@@ -21,8 +21,7 @@ const Home: React.FC = () => {
       .get(`/positions.json`, {
         params: {
           description,
-          location,
-          markdown: true,
+          location
         },
       })
       .then((res) => {
@@ -34,6 +33,7 @@ const Home: React.FC = () => {
         console.error(err);
       });
   }, []);
+
 
   return (
     <div>

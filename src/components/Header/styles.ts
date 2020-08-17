@@ -3,7 +3,7 @@ import { GoLogoGithub } from 'react-icons/go'
 
 export const Container = styled.div`
   background-color: var(--color-primary);
-  height: 250px;
+  height: 220px;
   width: 100vw;
 `;
 
@@ -23,6 +23,7 @@ export const HeaderContent = styled.div `
   align-items: center;
   justify-content: space-between;
 `
+
 export const LinksContainer = styled.div `
   a {
     transition: 200ms;
@@ -47,9 +48,9 @@ export const LinksContainer = styled.div `
 
 export const GitLogo = styled.div `
   p {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-weight: 300;
-    margin: 0.2em 0 0 0.1em;
+    margin: 0.15em 0 0 0.1em;
     color: #fff;
   }
   display: flex;
@@ -63,14 +64,38 @@ export const GitJobsLogo = styled(GoLogoGithub) `
 `;
 
 export const SearchForm = styled.div `
-  margin-top: 5rem; 
+  margin-top: 4rem; 
+
+  @media (min-width: 700px) {
+    form {
+      display: grid;
+      grid-template-columns:  1fr 1fr 0.5fr 0.5fr ;
+      gap: 1.5em;   
+    }
+  }
+
+  button {
+    margin-top: 2.2em;
+    border-radius: 0.5em;
+    font-size: 1.4rem;    
+    color: var(--button-bg-color);
+    background: var(--button-txt-color);
+    border: 1px solid var(--button-bg-color);
+    outline: none;
+
+    &:hover {
+      color: var(--button-txt-color);
+      background: var(--button-bg-color);
+      border: 1px solid var(--button-txt-color);
+    }
+  }
 `;
 
 export const InputBlock = styled.div `
   position: relative;
   margin-bottom: 1em;
 
-  &focus-within::after {
+  &:focus-within::after {
   width: calc(100% - 3.2rem);
   height: 2px;
   border-radius: 50%;
@@ -80,13 +105,6 @@ export const InputBlock = styled.div `
   left: 1.6rem;
   right: 1.6rem;
   bottom: 0;
-
-  @media (min-width: 700px) {
-    margin-top: 4em;
-    display: grid;
-    grid-template-columns:  1.5fr 1.5fr 0.5fr 0.5fr ;
-    gap: 1.5em;   
-  }
 }
 
   label {
@@ -100,6 +118,7 @@ export const InputBlock = styled.div `
     margin-top: 0.5em;
     padding: 1em 2em;
     width: 100%;
+    font-weight: 300;
     font-size: 1.4rem;
     border: 0;
     border-radius: 0.8rem;

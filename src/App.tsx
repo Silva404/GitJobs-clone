@@ -7,9 +7,9 @@ import Header from "./components/Header";
 import Positions from "./pages/Positions";
 import Home from "./pages/Home";
 import JobProfile from "./pages/JobProfile";
+import Footer from "./components/Footer";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Header />
@@ -17,10 +17,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/positions" element={<Positions />} />
-        <Route path="/positions/:id" element={<JobProfile/>} />
+        <Route path="/positions/:id" element={<JobProfile />} />
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
       <GlobalStyles />
     </BrowserRouter>
   );

@@ -9,27 +9,52 @@ import {
   HeaderContent,
   Menu,
   GitLogo,
-  InputBlock
+  InputBlock,
 } from "./styles";
+import api from "../../Services/api";
+import JobCard from "../JobCard";
 
 const Header: React.FC = () => {
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
+
+  const [description, setdescription] = useState("");
+  // const [location, setLocation] = useState("");
+  // const [type, setType] = useState("");
+
   const navigate = useNavigate();
+  const [allJobs, setAllJobs] = useState([]);
 
-  function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
 
-    navigate(`/positions?description=` + search.toLowerCase().trim());
+    // await api
+    //   .get("positions.json", {
+    //     params: {
+    //       description,
+    //       // location,
+    //       // type,
+    //     },
+    //   })
+    //   .then((res) => setAllJobs(res.data))
+    //   .catch((err) => {
+    //     console.error(err);
+    //   });
+
+    navigate(`/positions`);
   }
+
+  // ?description=` + description.toLowerCase().trim()
 
   return (
     <Container>
       <Menu>
         <HeaderContent>
-          <GitLogo>
-            <GitJobsLogo />
-            <p>Jobs</p>
-          </GitLogo>
+          <Link to={"/"}>
+            <GitLogo>
+              <GitJobsLogo />
+              <p>Jobs</p>
+            </GitLogo>
+          </Link>
           <LinksContainer>
             <Link to="/positions">All jobs</Link>
             <Link to="/faq">How it works</Link>
@@ -38,19 +63,42 @@ const Header: React.FC = () => {
 
         <SearchForm>
           <form method="post" onSubmit={handleSubmit}>
-            <InputBlock >
+            <InputBlock>
               <label htmlFor="description">Job description</label>
               <input
                 name="description"
                 placeholder="Filter by description, benefits, companies, expertise"
-                value={search}
-                onChange={(e) => setSearch(e.currentTarget.value)}
+                value={description}
+                onChange={(e) => setdescription(e.currentTarget.value)}
               />
-              <button type="submit">Enviar</button>
-            </InputBlock >
+            </InputBlock>
+            <InputBlock>
+              <label htmlFor="description">Job description</label>
+              <input
+                name="description"
+                placeholder="Filter by description, benefits, companies, expertise"
+                value={description}
+                onChange={(e) => setdescription(e.currentTarget.value)}
+              />
+            </InputBlock>
+            <InputBlock>
+              <label htmlFor="description">Job description</label>
+              <input
+                name="description"
+                placeholder="Filter by description, benefits, companies, expertise"
+                value={description}
+                onChange={(e) => setdescription(e.currentTarget.value)}
+              />
+            </InputBlock>
+            <button type="submit">Buscar</button>
           </form>
         </SearchForm>
       </Menu>
+      <div>
+        {allJobs.map((job, index) => {
+          return <JobCard key={index} job={job} />;
+        })}
+      </div>
     </Container>
   );
 };

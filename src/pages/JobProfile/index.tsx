@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import ReactMarkdown from "react-markdown/with-html";
 
 import { Link, useParams } from "react-router-dom";
 import api from "../../Services/api";
@@ -13,7 +14,7 @@ import {
   PositionContainer,
   ArrowLeft,
   Title,
-  Apply
+  Apply,
 } from "./styles";
 
 interface Data {
@@ -52,8 +53,6 @@ const JobProfile: React.FC = () => {
         console.error(err);
       });
   }, []);
-  console.log(job);
-  
 
   return (
     <Container>
@@ -70,6 +69,7 @@ const JobProfile: React.FC = () => {
         </Title>
         <AboutContainer>
           <AsideLeft>
+            {/* <ReactMarkdown source={job?.description} /> */}
             <p>{job?.description}</p>
           </AsideLeft>
           <AsideRight>
@@ -84,9 +84,7 @@ const JobProfile: React.FC = () => {
 
             <HowToApply>
               <h3>How to apply</h3>
-              <Apply>
-                {job?.how_to_apply}
-              </Apply>
+              <Apply>{job?.how_to_apply}</Apply>
               {/* <Link to={job?.url}>{job?.url}</Link> */}
             </HowToApply>
           </AsideRight>
