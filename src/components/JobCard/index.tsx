@@ -30,29 +30,3 @@ const JobCard: React.FC<Props> = ({ job }) => {
 };
 
 export default JobCard;
-
-// <div className="card-job-info">
-//   <div className="title-position">
-//     {/* <Link
-//       to={{
-//         pathname: `/positions/${job.id}.json`,
-//         state: { job },
-//       }}
-//     >
-//       test
-//     </Link> */}
-//     <p>
-//       <strong>{job.title}</strong>
-//     </p>
-//     <span>
-//       {job.company} - <strong>{job.type}</strong>
-//     </span>
-//   </div>
-//   {/* <input type="hidden" name="id" value={job.id} /> */}
-//   <div className="location">
-//     <p>
-//       {job.location}
-//       <br /> {job.created_at} day ago
-//     </p>
-//   </div>
-// </div>

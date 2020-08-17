@@ -10,7 +10,8 @@ import {
   AsideRight,
   Company,
   HowToApply,
-  PositionContainer
+  PositionContainer,
+  ArrowLeft
 } from "./styles";
 
 interface Data {
@@ -18,12 +19,14 @@ interface Data {
   url: string;
   title: string;
   company: string;
-  full_time: boolean;
+  type: string;
   location: string;
   created_at: string;
   description: any;
   how_to_apply: string;
   error: string;
+  company_logo: string;
+  company_url: string;
 }
 
 const JobPosition: React.FC = () => {
@@ -48,16 +51,15 @@ const JobPosition: React.FC = () => {
   }, []);
   console.log(job);
 
-  if (job?.error) {
-    return <h1>{job.error}</h1>;
-  }
-
   return (
     <Container>
-      <h1>See all positions </h1>
+      <Link to={"/positions"} className="allPositions">
+        <ArrowLeft />
+        See all positions
+      </Link>
       <PositionContainer>
         <p>
-          {job?.full_time} / {job?.location}
+          {job?.type} / {job?.location}
         </p>
         <h1>{job?.title}</h1>
         <AboutContainer>
@@ -66,9 +68,12 @@ const JobPosition: React.FC = () => {
           </AsideLeft>
           <AsideRight>
             <Company>
-              {job?.company}
-              <img src={job?.url} alt={job?.company} />
-              {/* <Link to={job?.url}>{job?.url}</Link> */}
+              <Link to={"ea"}>{job?.company}</Link>
+              <Link to={"ea"}>
+                <img src={job?.company_logo} alt={job?.company} />
+              </Link>
+
+              {/* <Link to={job?.company_url}>{job?.company_url}</Link> */}
             </Company>
 
             <HowToApply>
