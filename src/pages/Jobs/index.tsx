@@ -26,9 +26,7 @@ const Jobs: React.FC = () => {
         },
       })
       .then((res) => {
-        const results = res.data
-        console.log(results);
-        
+        const results = res.data;
 
         setJobs(results.sort(() => 0.5 - Math.random()).slice(0, 2));
       })

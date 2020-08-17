@@ -4,7 +4,6 @@ import { Container } from "./styles";
 import { Link, useParams } from "react-router-dom";
 import api from "../../Services/api";
 import PositionCard from "../../components/PositionCard";
-import ReactMarkdown from 'react-markdown'
 
 interface Data {
   id: string;
@@ -14,8 +13,9 @@ interface Data {
   full_time: boolean;
   location: string;
   created_at: string;
-  description: string;
+  description: any;
   how_to_apply: string;
+  error: string;
 }
 
 const JobPosition: React.FC = () => {
@@ -24,7 +24,11 @@ const JobPosition: React.FC = () => {
 
   useEffect(() => {
     api
-      .get(`/positions/${id}.json`)
+      .get(`/positions/${id}.json`, {
+        params: {
+          id,
+        },
+      })
       .then((res) => {
         const results: any = res.data;
 
@@ -36,21 +40,24 @@ const JobPosition: React.FC = () => {
   }, []);
   console.log(job);
 
+  if (job?.error) {
+    return <h1>{job.error}</h1>;
+  }
+
   return (
     <Container>
       <h1>See all positions </h1>
       <p>{job?.title}</p>
       <p>{job?.company}</p>
-      <ReactMarkdown>
-
+      <div>
       {job?.description}
-      </ReactMarkdown>
+      </div>
       <p>{job?.full_time}</p>
       <p>{job?.location}</p>
       <p>{job?.id}</p>
       <p>{job?.created_at}</p>
       <p>{job?.how_to_apply}</p>
-      {/* <PositionCard /> */}
+      {/* <PositionCard job={job}/> */}
     </Container>
   );
 };
