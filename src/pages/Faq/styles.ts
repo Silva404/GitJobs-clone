@@ -35,6 +35,10 @@ export const Card  = styled.div `
     align-self: center;
     text-align: center;
     color: var(--faq-txt-color);
+
+    &:first-child {
+      
+    }
     h4 {
       font-size: 1.6rem;
       align-self: end;     
