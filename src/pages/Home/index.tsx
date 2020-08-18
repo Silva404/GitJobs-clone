@@ -3,14 +3,7 @@ import JobCard from "../../components/JobCard";
 import { useParams } from "react-router-dom";
 import api from "../../Services/api";
 
-// import { Container } from './styles';
-
-interface PositionsApi {
-  company?: string;
-  location?: string;
-  id?: string;
-  title?: string;
-}
+import { JobsContainer, Title } from './styles';
 
 const Home: React.FC = () => {
   const { description, location } = useParams();
@@ -21,7 +14,7 @@ const Home: React.FC = () => {
       .get(`/positions.json`, {
         params: {
           description,
-          location
+          location,
         },
       })
       .then((res) => {
@@ -34,13 +27,17 @@ const Home: React.FC = () => {
       });
   }, []);
 
-
   return (
-    <div>
-      {jobs.map((job, index) => {
-        return <JobCard key={index} job={job} />;
-      })}
-    </div>
+    <JobsContainer>
+      <Title>
+        <h2>Featured Jobs</h2>
+      </Title>
+      <div>
+        {jobs.map((job, index) => {
+          return <JobCard key={index} job={job} />;
+        })}
+      </div>
+    </JobsContainer>
   );
 };
 

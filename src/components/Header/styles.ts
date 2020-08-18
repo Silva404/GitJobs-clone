@@ -128,3 +128,24 @@ export const InputBlock = styled.div `
     margin-bottom: 0;
   }  
 `
+
+export const CheckBox = styled.div `
+  display: flex;
+  align-items: center;
+
+  
+  margin: 1em 2em 0;
+  width: 100%;
+
+  label {
+    color: var(--label-color);
+    font-size: 1.4rem;
+    margin-right: 0.5em;
+  }
+`
+
+export const JobsContainer = styled.div `
+  width: 930px;
+  margin: 2em auto;
+
+`

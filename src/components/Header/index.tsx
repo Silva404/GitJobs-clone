@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Context from '../../Context/index'
+import Context from "../../Context/index";
 
 import {
   Container,
@@ -11,12 +11,13 @@ import {
   Menu,
   GitLogo,
   InputBlock,
+  CheckBox,
+  JobsContainer,
 } from "./styles";
 
 import api from "../../Services/api";
 import JobCard from "../JobCard";
 import Positions from "../../pages/Positions";
-
 
 const Header: React.FC = () => {
   const [description, setDescription] = useState("");
@@ -25,7 +26,6 @@ const Header: React.FC = () => {
 
   const navigate = useNavigate();
   const [allJobs, setAllJobs] = useState([]);
-  
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
               />
             </InputBlock>
             <InputBlock>
-              <label htmlFor="description">Job description</label>
+              <label htmlFor="description">Location</label>
               <input
                 name="description"
                 placeholder="Filter by description, benefits, companies, expertise"
@@ -80,45 +80,43 @@ const Header: React.FC = () => {
                 onChange={(e) => setLocation(e.currentTarget.value)}
               />
             </InputBlock>
-            <InputBlock>
+            <CheckBox>
+              <label htmlFor="full_time">Full time</label>
               <input
                 type="checkbox"
                 name="full_time"
                 value={type}
                 onChange={(e) => setType(e.currentTarget.value)}
               />
-            </InputBlock>
+            </CheckBox>
             <button type="submit">Buscar</button>
           </form>
         </SearchForm>
       </Menu>
-{/*       
-      <Context.Provider value={allJobs}>
-          <Positions/>
-      </Context.Provider> */}
-      
-      {/* <div>
-        {allJobs.map((job, index) => {
-          return <JobCard key={index} job={job} />;
-        })}
-      </div>
 
-      <div className="more-positions">
-              <Link to="/positions">
-                <strong>
-                  More Awesome Jobs
-                  <span className="material-icons">arrow_right_alt</span>
-                </strong>
-              </Link>
-            </div>
-            <footer>
-              <h2 className="title">Hot Searchs</h2>
-              <ul>
-                PHP · Rails · Python · JavaScript · Scala · Android · iOS ·
-                Linux · Erlang San Francisco · New York City · Austin, TX ·
-                London · Europe
-              </ul>
-            </footer> */}
+      <JobsContainer>
+        <div>
+          {allJobs.map((job, index) => {
+            return <JobCard key={index} job={job} />;
+          })}
+        </div>  
+
+        {/* <div className="more-positions">
+          <Link to="/positions">
+            <strong>
+              More Awesome Jobs
+              <span className="material-icons">arrow_right_alt</span>
+            </strong>
+          </Link>
+        </div>
+        <footer>
+          <h2 className="title">Hot Searchs</h2>
+          <ul>
+            PHP · Rails · Python · JavaScript · Scala · Android · iOS · Linux ·
+            Erlang San Francisco · New York City · Austin, TX · London · Europe
+          </ul>
+        </footer> */}
+      </JobsContainer>
     </Container>
   );
 };

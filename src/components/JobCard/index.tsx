@@ -2,6 +2,7 @@ import React from "react";
 import { Container, TopSide, BottomSide, Detail } from "./styles";
 import { Link } from "react-router-dom";
 
+
 interface Props {
   job: {
     id?: string;
@@ -16,14 +17,13 @@ interface Props {
 }
 
 const JobCard: React.FC<Props> = ({ job }) => {
-
   return (
     <Container>
       <TopSide>
         <Link to={`/positions/${job.id}`}>{job.title}</Link>
         <Detail>
-          <Link to={`/positions/${job.company}`}>{job.company}</Link>
-          <p> - {job.type}</p>
+          <Link to={`/positions/${job.company}`}>{job.company}</Link>-{" "}
+          <p>{job.type}</p>
         </Detail>
       </TopSide>
 
