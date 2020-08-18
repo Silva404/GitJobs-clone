@@ -16,6 +16,30 @@ export const TextContainer = styled.div `
   p, a {
     font-size: 1.4rem;
     font-weight: 300;
+    margin-bottom: 1em;
+  }
+  p {
+    color: var(--input-txt-color);
+  }
+  a {
+    margin-top: 1em;
+    color: var(--input-txt2-color);
+  }
+  h3 {
+    font-size: 1.6rem;
+    margin: 2em 0 1em;
+    color: var(--input-txt2-color);
+  }
+  ul {
+    margin-left: 1em;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--input-txt-color);
+  }
+  p strong {
+    font-size: 1.4rem;
+    margin-bottom: 1em;
+    color: var(--input-txt-color);
   }
 `;
 
@@ -23,7 +47,7 @@ export const Title = styled.div `
   color: var(--title-color);
   h1 {
       font-size: 2.2rem;  
-      margin-bottom: 0.5em;  
+      margin-bottom: 2.2em;  
       position: relative;
 
         &::after {
