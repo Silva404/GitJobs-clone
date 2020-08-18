@@ -42,7 +42,7 @@ const Header: React.FC = () => {
         console.error(err);
       });
 
-    navigate("/results");
+    // navigate("/results");
   }
 
   return (
