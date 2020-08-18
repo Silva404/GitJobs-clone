@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import JobCard from "../../components/JobCard";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import api from "../../Services/api";
 
 import { JobsContainer, Title } from './styles';
