@@ -63,7 +63,12 @@ export const Price = styled.div `
 `;
 
 export const CreditCards = styled.div `
-
+  width: 90%;
+  margin: 0 auto;
+  img {
+    max-width: 35px;
+    margin-right: 1em;
+  }
 `;
 
 export const Footer = styled.div `

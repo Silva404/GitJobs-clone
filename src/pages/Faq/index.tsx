@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Visa from '../../Assets/images/visa.svg'
+import Master from '../../Assets/images/master-card.svg'
+import American from '../../Assets/images/american-express.svg'
+
 import {
   Container,
   Title,
@@ -44,7 +48,14 @@ const Faq: React.FC = () => {
               </h1>
               <p>per listing</p>
             </Price>
-            <CreditCards></CreditCards>
+            <CreditCards>
+              <img src={Visa} alt="Visa Card"/>
+              <img src={Master} alt="Master Card"/>
+              <img src={American} alt="American Express Card"/>
+              <img src={Visa} alt="Visa Card"/>
+              <img src={Master} alt="Master Card"/>
+              <img src={American} alt="American Express Card"/>
+            </CreditCards>
           </Box>
           <h4>Pay with a major credit card</h4>
           <p>
