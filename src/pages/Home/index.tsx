@@ -37,6 +37,22 @@ const Home: React.FC = () => {
           return <JobCard key={index} job={job} />;
         })}
       </div>
+
+      <div className="more-positions">
+          <Link to="/positions">
+            <strong>
+              More Awesome Jobs
+              <span className="material-icons">arrow_right_alt</span>
+            </strong>
+          </Link>
+        </div>
+        <footer>
+          <h2 className="title">Hot Searchs</h2>
+          <ul>
+            PHP · Rails · Python · JavaScript · Scala · Android · iOS · Linux ·
+            Erlang San Francisco · New York City · Austin, TX · London · Europe
+          </ul>
+        </footer>
     </JobsContainer>
   );
 };
