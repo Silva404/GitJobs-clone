@@ -18,6 +18,8 @@ export default createGlobalStyle `
     --green-color: #45C328;
     --color-text-in-primary: #C2D3FF;
 
+    --faq-title-color: #1c1f38;
+    --faq-txt-color: #4d4d50;
     --button-txt-color: #f3f6fd;
     --button-bg-color: #4e86bb;
   }

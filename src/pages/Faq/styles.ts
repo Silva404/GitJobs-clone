@@ -8,9 +8,9 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.div `
-  color: var(--title-color);
+  color: var(--faq-title-color);
   text-align: center;
-    h1 {
+  h1 {
       font-size: 2.2rem;  
       margin-bottom: 0.5em;    
     } 
@@ -34,7 +34,7 @@ export const Cards = styled.div `
 export const Card  = styled.div `
     align-self: center;
     text-align: center;
-    color: var(--base-txt-color);
+    color: var(--faq-txt-color);
     h4 {
       font-size: 1.6rem;
       align-self: end;     

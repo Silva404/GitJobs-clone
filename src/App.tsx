@@ -10,7 +10,6 @@ import JobProfile from "./pages/JobProfile";
 import Footer from "./components/Footer";
 import Faq from "./pages/Faq";
 import API from "./pages/API";
-import Results from "./pages/Results";
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/positions" element={<Positions />} />
-        <Route path="/results" element={<Results />} />
         <Route path="/positions/:id" element={<JobProfile />} />
 
         <Route path="/faq" element={<Faq />} />
