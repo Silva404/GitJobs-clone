@@ -10,6 +10,7 @@ export default createGlobalStyle `
     --label-color: #DBE5FF;
     --border-color: #e2e5ee;
     --input-txt-color: #7a798d;
+    --input-txt2-color: #646374;
     --title-color: #262A4D;
     --subtitle-color: #282a3b;
     --base-txt-color: #4A69A7;

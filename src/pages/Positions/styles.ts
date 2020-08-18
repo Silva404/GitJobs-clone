@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { MdKeyboardBackspace } from 'react-icons/md'
+import { FaTwitter } from 'react-icons/fa'
 
 export const Container = styled.div`
   width: 940px;
@@ -44,12 +45,6 @@ export const Title = styled.div `
     height: 1px;
     background: rgba(0,0,0,.1)
   }
-  p {
-    font-weight: 300;
-    font-size: 1.3rem;
-    color: var(--input-txt-color);
-    margin-bottom: 0.25em;
-  }
   h1 {
     font-size: 2rem;
     color: var(--title-color)
@@ -81,38 +76,24 @@ export const AsideRight = styled.div `
   }
   
 `;
-export const Company = styled.div `
+export const Subscribe = styled.div `
   width: 100%; 
-
-  a { 
-    color: var(--subtitle-color);
-    position: relative;
-    margin-bottom: 1em;
-    display: flex;
-
-    &:first-child::after {
-      position: absolute;
-      content: '';
-      bottom: -6px;
-      height: 1px;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,.1);
-    }
-  }
+  font-size: 1.4rem;
   padding: 1em;
   margin-bottom: 1em;
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
   box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
   
-  a {
-   img {
-     width: 100%;
-   }
- } 
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  a { 
+    color: var(--subtitle-color);
+  }   
 `;
+
 export const HowToApply = styled.div ` 
   width: 100%;
   
@@ -143,12 +124,51 @@ export const HowToApply = styled.div `
   }
 `;
 
-export const Apply = styled.div `
-  margin-top: 1.5em;
+export const EmailUpdates = styled.div ` 
   width: 100%;
-  font-size: 1.2rem;
-  font-weight: 300;
+  padding: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5em;
+  box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
+  
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--subtitle-color);
+    position: relative;
+    margin-bottom: 1em;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -6px;
+      height: 1px;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,.1);
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--input-txt2-color);
+  }
+
+  button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid var(--button-bg-color);
+    background: var(--button-bg-color);
+    color: var(--button-txt-color);
+    margin-top: 2em;
+  }
 `
 
-export const EmailUpdates = styled.div  `
+export const TwitterLogo = styled(FaTwitter) `
+  height: 25px;
+  margin-right: 0.5em;
+  color: var(--subtitle-color)
 `

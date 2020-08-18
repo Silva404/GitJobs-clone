@@ -1,27 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import JobCard from "../../components/JobCard";
 import { useParams, Link } from "react-router-dom";
 import api from "../../Services/api";
+import Context from '../../Context/index'
 
 import {
   Container,
   AboutContainer,
   AsideLeft,
   AsideRight,
-  Company,
+  Subscribe,
   EmailUpdates,
   PositionContainer,
   ArrowLeft,
   Title,
-  Apply,
+  TwitterLogo
 } from "./styles";
-
-interface PositionsApi {
-  company?: string;
-  location?: string;
-  id?: string;
-  title?: string;
-}
 
 const Positions: React.FC = () => {
   const { description, location } = useParams();
@@ -46,6 +40,8 @@ const Positions: React.FC = () => {
       });
   }, [description, location]);
 
+  // const { jobs } = useContext(Context)
+
   return (
     <Container>
       <Link to={"/positions"} className="allPositions">
@@ -63,12 +59,10 @@ const Positions: React.FC = () => {
             })}
           </AsideLeft>
           <AsideRight>
-            <Company>
-              {/* <Link to={"ea"}>{job?.company}</Link>
-              <Link to={"ea"}>
-                <img src={job?.company_logo} alt={job?.company} />
-              </Link> */}
-            </Company>
+            <Subscribe>
+              <TwitterLogo/>
+              <Link to="https://twitter.com/GitHubJobs">Follow GitHub Jobs on Twitter</Link>              
+            </Subscribe>
 
             <EmailUpdates>
               <h3>Subscribe to email updates</h3>

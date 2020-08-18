@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Context from '../../Context/index'
 
 import {
   Container,
@@ -14,6 +15,8 @@ import {
 
 import api from "../../Services/api";
 import JobCard from "../JobCard";
+import Positions from "../../pages/Positions";
+
 
 const Header: React.FC = () => {
   const [description, setDescription] = useState("");
@@ -22,7 +25,7 @@ const Header: React.FC = () => {
 
   const navigate = useNavigate();
   const [allJobs, setAllJobs] = useState([]);
-  const globalJobs = React.createContext(allJobs)
+  
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -89,6 +92,11 @@ const Header: React.FC = () => {
           </form>
         </SearchForm>
       </Menu>
+{/*       
+      <Context.Provider value={allJobs}>
+          <Positions/>
+      </Context.Provider> */}
+      
       {/* <div>
         {allJobs.map((job, index) => {
           return <JobCard key={index} job={job} />;

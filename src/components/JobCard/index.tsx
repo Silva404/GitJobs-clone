@@ -11,17 +11,19 @@ interface Props {
     full_time?: boolean;
     location: string;
     created_at?: string;
+    type?: string;
   };
 }
 
 const JobCard: React.FC<Props> = ({ job }) => {
+
   return (
     <Container>
       <TopSide>
         <Link to={`/positions/${job.id}`}>{job.title}</Link>
         <Detail>
-          <Link to={`/positions/${job.company}`}>{job.company}</Link>-{" "}
-          <p>{job.type}</p>
+          <Link to={`/positions/${job.company}`}>{job.company}</Link>
+          <p> - {job.type}</p>
         </Detail>
       </TopSide>
 
