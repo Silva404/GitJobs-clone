@@ -4,7 +4,7 @@ import { MdKeyboardBackspace } from 'react-icons/md'
 import { FaTwitter } from 'react-icons/fa'
 
 export const Container = styled.div`
-  width: 90%:
+  width: 90%;
   max-width: 940px;
   margin: 3em auto;
   a.allPositions {
@@ -15,7 +15,7 @@ export const Container = styled.div`
     transition: 200ms;
   }
   a.allPositions:hover {
-    filter: brightness(0.6)
+    filter: brightness(0.6);
   }
 `;
 
@@ -124,7 +124,7 @@ export const HowToApply = styled.div `
     }
   }
   img {
-    width: 100%;
+    max-width: 100%;
   }
 `;
 

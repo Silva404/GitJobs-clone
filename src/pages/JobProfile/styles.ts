@@ -57,7 +57,7 @@ export const Title = styled.div `
 `;
 
 export const AboutContainer = styled.div ` 
-  width: 100%;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 2em;
@@ -108,13 +108,13 @@ export const Company = styled.div `
   
   a {
    img {
-     width: 100%;
+     max-width: 100%;
    }
  } 
   
 `;
 export const HowToApply = styled.div ` 
-  width: 100%;
+  max-width: 100%;
   
 
   padding: 1em;
@@ -139,13 +139,13 @@ export const HowToApply = styled.div `
     }
   }
   img {
-    width: 100%;
+    max-width: 100%;
   }
 `;
 
 export const Apply = styled.div `
   margin-top: 1.5em;
-  width: 100%;
+  max-width: 150px;
   font-size: 1.2rem;
   font-weight: 300;
 `
