@@ -11,7 +11,6 @@ import {
   Menu,
   GitLogo,
   InputBlock,
-  CheckBox,
   JobsContainer,
 } from "./styles";
 
@@ -42,6 +41,8 @@ const Header: React.FC = () => {
       .catch((err) => {
         console.error(err);
       });
+
+    navigate("/positions");
   }
 
   return (
@@ -75,20 +76,28 @@ const Header: React.FC = () => {
               <label htmlFor="description">Location</label>
               <input
                 name="description"
-                placeholder="Filter by description, benefits, companies, expertise"
+                placeholder="Filter by city, state, zip code or country"
                 value={location}
                 onChange={(e) => setLocation(e.currentTarget.value)}
               />
             </InputBlock>
-            <CheckBox>
-              <label htmlFor="full_time">Full time</label>
-              <input
-                type="checkbox"
-                name="full_time"
-                value={type}
-                onChange={(e) => setType(e.currentTarget.value)}
-              />
-            </CheckBox>
+            <InputBlock>
+              <label htmlFor="full_time">Job Type</label>
+              <select name="full_time">
+                <option
+                  value={type}
+                  onChange={(e) => setType(e.currentTarget.value)}
+                >
+                  Full Time
+                </option>
+                <option
+                  value={type}
+                  onChange={(e) => setType(e.currentTarget.value)}
+                >
+                  Part Time
+                </option>
+              </select>
+            </InputBlock>
             <button type="submit">Buscar</button>
           </form>
         </SearchForm>
@@ -99,8 +108,7 @@ const Header: React.FC = () => {
           {allJobs.map((job, index) => {
             return <JobCard key={index} job={job} />;
           })}
-        </div>  
-        
+        </div>
       </JobsContainer>
     </Container>
   );

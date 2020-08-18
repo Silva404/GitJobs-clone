@@ -3,8 +3,12 @@ import { GoLogoGithub } from 'react-icons/go'
 
 export const Container = styled.div`
   background-color: var(--color-primary);
-  height: 220px;
   width: 100vw;
+  height: 485px;
+  
+  @media (min-width: 700px) {    
+    height: 220px;
+  }
 `;
 
 export const Menu = styled.div`
@@ -88,6 +92,11 @@ export const SearchForm = styled.div `
       background: var(--button-bg-color);
       border: 1px solid var(--button-txt-color);
     }
+
+    @media (max-width: 700px) {
+      padding: 1em 2em;
+      width: 100%;
+    }
   }
 `;
 
@@ -110,9 +119,13 @@ export const InputBlock = styled.div `
   label {
   color: var(--label-color);
   font-size: 1.4rem;
-}
+  }
 
-  input {
+  select {
+    background: #fff;
+  }
+
+  input, select {
     outline: none;
     color: var(--input-txt-color);
     margin-top: 0.5em;
@@ -128,22 +141,6 @@ export const InputBlock = styled.div `
     margin-bottom: 0;
   }  
 `
-
-export const CheckBox = styled.div `
-  display: flex;
-  align-items: center;
-
-  
-  margin: 1em 2em 0;
-  width: 100%;
-
-  label {
-    color: var(--label-color);
-    font-size: 1.4rem;
-    margin-right: 0.5em;
-  }
-`
-
 export const JobsContainer = styled.div `
   width: 930px;
   margin: 2em auto;

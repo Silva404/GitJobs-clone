@@ -9,7 +9,11 @@ import {
   MorePositions,
   Footer,
   ArrowRight,
-  HotLinks
+  HotLinks,
+  RightSide,
+  LeftSide,
+  FeaturedCompany,
+  Main
 } from "./styles";
 
 const Home: React.FC = () => {
@@ -39,40 +43,59 @@ const Home: React.FC = () => {
       <Title>
         <h2>Featured Jobs</h2>
       </Title>
-      <div>
-        {jobs.map((job, index) => {
-          return <JobCard key={index} job={job} />;
-        })}
-      </div>
+      <Main>
+        <LeftSide>
+          <div>
+            {jobs.map((job, index) => {
+              return <JobCard key={index} job={job} />;
+            })}
+          </div>
 
-      <MorePositions>
-        <Link to="/positions">
-          <strong>
-            More Awesome Jobs
-            <ArrowRight />
-          </strong>
-        </Link>
-      </MorePositions>
-      <Footer>
-        <h2 className="title">Hot Searchs</h2>
-        <HotLinks>
-          <Link to={"/positions?description=PHP"}>PHP</Link>·
-          <Link to={"/positions?description=Rails"}>Rails</Link>
-          <Link to={"/positions?description=Python"}>Python</Link>
-          <Link to={"/positions?description=JavaScript"}>JavaScript</Link>
-          <Link to={"/positions?description=Scala"}>Scala</Link>
-          <Link to={"/positions?description=Android"}>Android</Link>
-          <Link to={"/positions?description=iOS"}>iOS</Link>
-          <Link to={"/positions?description=Linux"}>Linux</Link>
-          <Link to={"/positions?description=Erlang"}>Erlang</Link>
-          <Link to={"/positions?location=San+Francisco"}>San Francisco</Link>
-          <Link to={"/positions?location=New+York+City"}>New York City</Link>
-          <Link to={"/positions?location=Austin+TX"}>Austin, TX</Link>
-          <Link to={"/positions?location=London"}>London</Link>
-          <Link to={"/positions?location=Europe"}>Europe</Link>· · · · · · · · ·
-          · · ·
-        </HotLinks>
-      </Footer>
+          <MorePositions>
+            <Link to="/positions">
+              <strong>
+                More Awesome Jobs
+                <ArrowRight />
+              </strong>
+            </Link>
+          </MorePositions>
+          <Footer>
+            <h2 className="title">Hot Searchs</h2>
+            <HotLinks>
+              <Link to={"/positions?description=PHP"}>PHP</Link>·
+              <Link to={"/positions?description=Rails"}>Rails</Link>·
+              <Link to={"/positions?description=Python"}>Python</Link>·
+              <Link to={"/positions?description=JavaScript"}>JavaScript</Link>·
+              <Link to={"/positions?description=Scala"}>Scala</Link>·
+              <Link to={"/positions?description=Android"}>Android</Link>·
+              <Link to={"/positions?description=iOS"}>iOS</Link>·
+              <Link to={"/positions?description=Linux"}>Linux</Link>·
+              <Link to={"/positions?description=Erlang"}>Erlang</Link>·
+              <Link to={"/positions?location=San+Francisco"}>
+                San Francisco
+              </Link>
+              ·
+              <Link to={"/positions?location=New+York+City"}>
+                New York City
+              </Link>
+              ·<Link to={"/positions?location=Austin+TX"}>Austin, TX</Link>·
+              <Link to={"/positions?location=London"}>London</Link>·
+              <Link to={"/positions?location=Europe"}>Europe</Link>
+            </HotLinks>
+          </Footer>
+        </LeftSide>
+
+        <RightSide>
+          <FeaturedCompany>
+            <p>Featured Company</p>
+            {/* <Link to={"ea"}>{jobs?.company}</Link> */}
+            {/* <Link to={"ea"}>
+            <img src={job.company_logo} alt={jobs[0]?.company} />
+          </Link> */}
+          </FeaturedCompany>
+        </RightSide>
+        
+      </Main>
     </JobsContainer>
   );
 };

@@ -5,7 +5,7 @@ import { FaGithub } from 'react-icons/fa'
 export const FooterContent = styled.div `
   margin-top: auto;
   background: #fff;
-  width: 100vw;
+  width: 100%;
   position: relative;
 
   &::after {
@@ -25,29 +25,64 @@ export const FooterContent = styled.div `
 `;
 
 export const FooterContainer = styled.div `
-  width: 940px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
+  flex-direction: column; 
   margin: 0 auto;
 
-  height: 60px;
+  a {
+    margin: 2em auto;
+  }
+
+  
+  @media (min-width: 800px) {
+    width: 90%;
+    max-width: 940px;
+    display: flex;
+    flex-direction: initial;
+    align-items: center;
+    justify-content: space-between;
+    
+    height: 60px;
+
+    a {
+      margin: 0;
+    }
+  }
 `;
 
 export const FooterLinks = styled.div `
+  margin: 2em auto 0;
 
+  a { 
+    margin-right: 1.5em;
+  }
+
+  @media (min-width: 800px) {
+    margin: 0;
+  }
 `;
 
 export const GitHubLogo = styled(FaGithub) `
   height: 25px;
   width: 25px;
   opacity: 0.25;
+
+  margin: 0 auto;
+
+  @media (min-width: 700px) {
+    margin: 0;
+  }
 `;
 
 export const Copyright = styled.div `
    font-size: 1.2rem;
    font-weight: 500;
    opacity: 0.5;
+
+   margin: 0 auto 2em;
+
+  @media (min-width: 800px) {
+    margin: 0;
+  }
 `;
 
