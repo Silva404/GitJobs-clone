@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { Container, Title, Footer, Cards, Card, Box, Price, CreditCards } from "./styles";
+import {
+  Container,
+  Title,
+  Footer,
+  Cards,
+  Card,
+  Box,
+  Price,
+  CreditCards,
+} from "./styles";
 
 const Faq: React.FC = () => {
   return (
@@ -27,34 +36,28 @@ const Faq: React.FC = () => {
             and verify your email address.
           </p>
         </Card>
-      </Cards>
-
-      <Cards>
         <Card>
-          <img
-            src="https://jobs.github.com/images/modules/faq/screenshot-editor.jpg"
-            alt="Create & preview your listing"
-          />
+          <Box>
+            <Price>
+              <h1>
+                <span>$</span>450.00
+              </h1>
+              <p>per listing</p>
+            </Price>
+            <CreditCards></CreditCards>
+          </Box>
           <h4>Pay with a major credit card</h4>
           <p>
             Invoicing available on request for bulk orders. Email
             <Link to="jobs@github.com">jobs@github.com </Link>
             for more info. Sorry, no recruitment agencies.
-          </p>
+          </p>          
         </Card>
-      </Cards>
-
-      <Cards>
         <Card>
-          <Box>
-            <Price>
-              <h1><span>$</span>450.00</h1>
-              <p>per listing</p>
-            </Price>
-            <CreditCards>
-
-            </CreditCards>
-          </Box>
+          <img
+            src="https://jobs.github.com/images/modules/faq/screenshot-editor.jpg"
+            alt="Create & preview your listing"
+          />
           <h4>Your listing goes live immediately</h4>
           <p>
             Listings are live for 30 days. We’ll send you a receipt and a link
