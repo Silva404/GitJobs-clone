@@ -8,6 +8,8 @@ import Positions from "./pages/Positions";
 import Home from "./pages/Home";
 import JobProfile from "./pages/JobProfile";
 import Footer from "./components/Footer";
+import Faq from "./pages/Faq";
+import API from "./pages/API";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/positions" element={<Positions />} />
         <Route path="/positions/:id" element={<JobProfile />} />
+
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/api" element={<API />} />
       </Routes>
 
       <Footer />

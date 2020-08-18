@@ -4,7 +4,8 @@ import { MdKeyboardBackspace } from 'react-icons/md'
 import { FaTwitter } from 'react-icons/fa'
 
 export const Container = styled.div`
-  width: 940px;
+  width: 90%:
+  max-width: 940px;
   margin: 3em auto;
   a.allPositions {
     display: flex;
@@ -53,14 +54,17 @@ export const Title = styled.div `
 
 export const AboutContainer = styled.div ` 
   width: 100%;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2em;
-  
+
+  @media (min-width: 700px) {
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2em;  
+  }
 `;
 
 export const AsideLeft = styled.div ` 
-  width: 100%;
+  max-width: 100%;
   font-size: 1.4rem;
   font-weight: 300;
   color: var(--input-txt2-color);  
@@ -69,7 +73,7 @@ export const AsideLeft = styled.div `
   }
 `;
 export const AsideRight = styled.div ` 
-  width: 100%;
+  max-width: 100%;
   align-self: start;
   a {
     color: var(--title-color)
@@ -80,7 +84,7 @@ export const Subscribe = styled.div `
   width: 100%; 
   font-size: 1.4rem;
   padding: 1em;
-  margin-bottom: 1em;
+  margin: 1em 0;
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
   box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
@@ -127,6 +131,7 @@ export const HowToApply = styled.div `
 export const EmailUpdates = styled.div ` 
   width: 100%;
   padding: 1em;
+  margin: 1em 0;
   border: 1px solid var(--border-color);
   border-radius: 0.5em;
   box-shadow: 0 5px 10px -5px rgba(0,0,0,.1);
