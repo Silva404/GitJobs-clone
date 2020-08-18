@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from "react";
 import JobCard from "../../components/JobCard";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import api from "../../Services/api";
 
-// import { Container } from './styles';
+import {
+  Container,
+  AboutContainer,
+  AsideLeft,
+  AsideRight,
+  Company,
+  EmailUpdates,
+  PositionContainer,
+  ArrowLeft,
+  Title,
+  Apply,
+} from "./styles";
 
 interface PositionsApi {
   company?: string;
@@ -36,11 +47,41 @@ const Positions: React.FC = () => {
   }, [description, location]);
 
   return (
-    <div>
-      {jobs.map((job, index) => {
-        return <JobCard key={index} job={job} />;
-      })}
-    </div>
+    <Container>
+      <Link to={"/positions"} className="allPositions">
+        <ArrowLeft />
+        See all job positions
+      </Link>
+      <PositionContainer>
+        <Title>
+          <h1>Showing {jobs.length} of AllJobs </h1>
+        </Title>
+        <AboutContainer>
+          <AsideLeft>
+            {jobs.map((job, index) => {
+              return <JobCard key={index} job={job} />;
+            })}
+          </AsideLeft>
+          <AsideRight>
+            <Company>
+              {/* <Link to={"ea"}>{job?.company}</Link>
+              <Link to={"ea"}>
+                <img src={job?.company_logo} alt={job?.company} />
+              </Link> */}
+            </Company>
+
+            <EmailUpdates>
+              <h3>Subscribe to email updates</h3>
+              <p>
+                Subscribe and we’ll send you a summary once a week if new jobs
+                are posted to this list.
+              </p>
+              <button>Subscribe to updates</button>
+            </EmailUpdates>
+          </AsideRight>
+        </AboutContainer>
+      </PositionContainer>
+    </Container>
   );
 };
 

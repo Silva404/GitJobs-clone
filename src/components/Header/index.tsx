@@ -11,34 +11,34 @@ import {
   GitLogo,
   InputBlock,
 } from "./styles";
+
 import api from "../../Services/api";
 import JobCard from "../JobCard";
 
 const Header: React.FC = () => {
-  const [description, setdescription] = useState("");
+  const [description, setDescription] = useState("");
   const [location, setLocation] = useState("");
-  // const [type, setType] = useState("");
+  const [type, setType] = useState("");
 
   const navigate = useNavigate();
   const [allJobs, setAllJobs] = useState([]);
+  const globalJobs = React.createContext(allJobs)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    // await api
-    //   .get("positions.json", {
-    //     params: {
-    //       description,
-    //       // location,
-    //       // type,
-    //     },
-    //   })
-    //   .then((res) => setAllJobs(res.data))
-    //   .catch((err) => {
-    //     console.error(err);
-    //   });
-
-    navigate(`/positions?${params}`);
+    await api
+      .get("positions.json", {
+        params: {
+          description,
+          location,
+          type,
+        },
+      })
+      .then((res) => setAllJobs(res.data))
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   return (
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
                 name="description"
                 placeholder="Filter by description, benefits, companies, expertise"
                 value={description}
-                onChange={(e) => setdescription(e.currentTarget.value)}
+                onChange={(e) => setDescription(e.currentTarget.value)}
               />
             </InputBlock>
             <InputBlock>
@@ -73,28 +73,44 @@ const Header: React.FC = () => {
               <input
                 name="description"
                 placeholder="Filter by description, benefits, companies, expertise"
-                value={description}
-                onChange={(e) => setdescription(e.currentTarget.value)}
+                value={location}
+                onChange={(e) => setLocation(e.currentTarget.value)}
               />
             </InputBlock>
             <InputBlock>
-              <label htmlFor="description">Job description</label>
               <input
-                name="description"
-                placeholder="Filter by description, benefits, companies, expertise"
-                value={description}
-                onChange={(e) => setdescription(e.currentTarget.value)}
+                type="checkbox"
+                name="full_time"
+                value={type}
+                onChange={(e) => setType(e.currentTarget.value)}
               />
             </InputBlock>
             <button type="submit">Buscar</button>
           </form>
         </SearchForm>
       </Menu>
-      <div>
+      {/* <div>
         {allJobs.map((job, index) => {
           return <JobCard key={index} job={job} />;
         })}
       </div>
+
+      <div className="more-positions">
+              <Link to="/positions">
+                <strong>
+                  More Awesome Jobs
+                  <span className="material-icons">arrow_right_alt</span>
+                </strong>
+              </Link>
+            </div>
+            <footer>
+              <h2 className="title">Hot Searchs</h2>
+              <ul>
+                PHP · Rails · Python · JavaScript · Scala · Android · iOS ·
+                Linux · Erlang San Francisco · New York City · Austin, TX ·
+                London · Europe
+              </ul>
+            </footer> */}
     </Container>
   );
 };

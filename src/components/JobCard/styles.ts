@@ -13,3 +13,6 @@ export const TopSide = styled.div `
 export const BottomSide = styled.div `
 
 `;
+
+export const Detail = styled.div `
+`

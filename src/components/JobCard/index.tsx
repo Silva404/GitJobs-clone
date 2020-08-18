@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, TopSide, BottomSide } from "./styles";
+import { Container, TopSide, BottomSide, Detail } from "./styles";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -19,11 +19,15 @@ const JobCard: React.FC<Props> = ({ job }) => {
     <Container>
       <TopSide>
         <Link to={`/positions/${job.id}`}>{job.title}</Link>
-        <Link to={`/positions/${job.company}`}>{job.company}</Link>
+        <Detail>
+          <Link to={`/positions/${job.company}`}>{job.company}</Link>-{" "}
+          <p>{job.type}</p>
+        </Detail>
       </TopSide>
 
       <BottomSide>
-        <Link to={`/positions/${job.location}`}>{job.location}</Link>
+        <p>{job.location}</p>
+        <p>{job.created_at}</p>
       </BottomSide>
     </Container>
   );
