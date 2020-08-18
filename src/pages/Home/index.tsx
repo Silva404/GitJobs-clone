@@ -3,7 +3,14 @@ import JobCard from "../../components/JobCard";
 import { useParams, Link } from "react-router-dom";
 import api from "../../Services/api";
 
-import { JobsContainer, Title } from './styles';
+import {
+  JobsContainer,
+  Title,
+  MorePositions,
+  Footer,
+  ArrowRight,
+  HotLinks
+} from "./styles";
 
 const Home: React.FC = () => {
   const { description, location } = useParams();
@@ -38,21 +45,34 @@ const Home: React.FC = () => {
         })}
       </div>
 
-      <div className="more-positions">
-          <Link to="/positions">
-            <strong>
-              More Awesome Jobs
-              <span className="material-icons">arrow_right_alt</span>
-            </strong>
-          </Link>
-        </div>
-        <footer>
-          <h2 className="title">Hot Searchs</h2>
-          <ul>
-            PHP · Rails · Python · JavaScript · Scala · Android · iOS · Linux ·
-            Erlang San Francisco · New York City · Austin, TX · London · Europe
-          </ul>
-        </footer>
+      <MorePositions>
+        <Link to="/positions">
+          <strong>
+            More Awesome Jobs
+            <ArrowRight />
+          </strong>
+        </Link>
+      </MorePositions>
+      <Footer>
+        <h2 className="title">Hot Searchs</h2>
+        <HotLinks>
+          <Link to={"/positions?description=PHP"}>PHP</Link>·
+          <Link to={"/positions?description=Rails"}>Rails</Link>
+          <Link to={"/positions?description=Python"}>Python</Link>
+          <Link to={"/positions?description=JavaScript"}>JavaScript</Link>
+          <Link to={"/positions?description=Scala"}>Scala</Link>
+          <Link to={"/positions?description=Android"}>Android</Link>
+          <Link to={"/positions?description=iOS"}>iOS</Link>
+          <Link to={"/positions?description=Linux"}>Linux</Link>
+          <Link to={"/positions?description=Erlang"}>Erlang</Link>
+          <Link to={"/positions?location=San+Francisco"}>San Francisco</Link>
+          <Link to={"/positions?location=New+York+City"}>New York City</Link>
+          <Link to={"/positions?location=Austin+TX"}>Austin, TX</Link>
+          <Link to={"/positions?location=London"}>London</Link>
+          <Link to={"/positions?location=Europe"}>Europe</Link>· · · · · · · · ·
+          · · ·
+        </HotLinks>
+      </Footer>
     </JobsContainer>
   );
 };
