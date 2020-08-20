@@ -47,6 +47,9 @@ const Header: React.FC = () => {
 
   return (
     <Container>
+      <Context.Provider value={allJobs}>
+        <Positions />
+      </Context.Provider>
       <Menu>
         <HeaderContent>
           <Link to={"/"}>

@@ -39,8 +39,8 @@ const Positions: React.FC = () => {
         console.error(err);
       });
   }, [description, location]);
-
-  // const { jobs } = useContext(Context)
+ // 
+  const { jobs } = useContext(Context)
 
   return (
     <Container>
