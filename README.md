@@ -18,4 +18,9 @@
 ```
  $ yarn start
 ```
+ 
+ <h1 align="center">
+<img src="https://user-images.githubusercontent.com/62123441/91338616-98f77700-e7ab-11ea-912d-30624f46ceda.png"/>
+  <br>  
+</h1>
 
